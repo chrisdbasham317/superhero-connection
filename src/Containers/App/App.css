@@ -1,5 +1,18 @@
 .header--nav-bar {
+  align-items: flex-end;
+  background-image: url('https://static.skillshare.com/uploads/discussion/tmp/c18a7b07');
   display: flex;
-  height: 20vh;
+  height: 15vh;
   justify-content: space-between;
+}
+
+.div--nav-links {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.links {
+  text-decoration: none;
 }

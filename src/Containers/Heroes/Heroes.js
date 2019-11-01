@@ -11,7 +11,7 @@ export const Heroes = ({ heroes, isLoading }) => {
       key={hero.id}
       id={hero.id}
       name={hero.name}
-      img={hero.images.sm}
+      img={hero.images.md}
     />)
   })
   return (

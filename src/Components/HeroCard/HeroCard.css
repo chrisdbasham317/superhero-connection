@@ -1,18 +1,19 @@
 .section--hero-card {
   align-items: center;
-  background: repeating-radial-gradient(black, transparent  90px);
-  border: 2px solid black;
+  background: #413f3f;
+  border: 2px solid #413f3f;
   border-radius: 5px;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 1vh 1vh;
-  max-width: 160px;
+  /* max-width: 160px; */
 }
 
 .div--view-more-btn {
   border-radius: 20px;
-  background-color: black;
+  background-color: #ffffff;
   height: 20px;
   margin-bottom: 1vh;
   text-align: center;
@@ -21,5 +22,5 @@
 
 .link--view-more-btn {
   text-decoration: none;
-  color: white;
+  color: #000000;
 }

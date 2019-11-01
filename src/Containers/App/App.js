@@ -24,8 +24,10 @@ export class App extends Component {
       <div className='div--app'>
         <header className='header--nav-bar'>
           <h1>SuperHero Battle</h1>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/battle'>Battle</NavLink>
+          <div className='div--nav-links'>
+            <NavLink className='links' to='/'>Home</NavLink>
+            <NavLink className='links' to='/battle'>Battle</NavLink>
+          </div>
         </header>
         <main>
           <Route exact path='/'>
