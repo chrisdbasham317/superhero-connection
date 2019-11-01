@@ -28,7 +28,7 @@ export class App extends Component {
           <NavLink to='/battle'>Battle</NavLink>
         </header>
         <main>
-          <Route path='/'>
+          <Route exact path='/'>
             <Heroes />
           </Route>
           <Route path='/battle'>
