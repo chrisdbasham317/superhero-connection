@@ -22,3 +22,13 @@ export const setModal = bool => ({
   type: 'SET_MODAL',
   bool
 })
+
+export const setCombatant1 = (id) => ({
+  type: 'SET_COMBATANT_1',
+  id
+})
+
+export const setCombatant2 = (id) => ({
+  type: 'SET_COMBATANT_2',
+  id
+})
