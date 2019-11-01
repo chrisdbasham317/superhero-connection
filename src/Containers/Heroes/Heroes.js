@@ -5,8 +5,7 @@ import { getDefaultHeroes } from '../../helpers/helperFuncs';
 import HeroCard from '../../Components/HeroCard/HeroCard';
 
 export const Heroes = ({ heroes, isLoading }) => {
-  const defaultHeroes = getDefaultHeroes(heroes.heroes);
-  const heroCards = defaultHeroes.map(hero => {
+  const heroCards = heroes.map(hero => {
     return (<HeroCard
       key={hero.id}
       name={hero.name}
@@ -20,7 +19,7 @@ export const Heroes = ({ heroes, isLoading }) => {
   )
 }
 
-export const mapStateToProps = (heroes, isLoading) => ({
+export const mapStateToProps = ({ heroes, isLoading }) => ({
   heroes,
   isLoading
 })

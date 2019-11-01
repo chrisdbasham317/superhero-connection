@@ -1,5 +1,5 @@
 import { isLoading, hasErrored, setHeroes } from '../Actions';
-// import { getDefaultHeroes } from '../helpers/helperFuncs';
+import { getDefaultHeroes } from '../helpers/helperFuncs';
 
 export const fetchHeroes = () => {
   return async (dispatch) => {
@@ -10,8 +10,7 @@ export const fetchHeroes = () => {
         throw Error(response.statusText)
       }
       let heroes = await response.json();
-      // heroes = getDefaultHeroes(heroes);
-      // console.log(heroes);
+      heroes = getDefaultHeroes(heroes);
       dispatch(isLoading(false));
       dispatch(setHeroes(heroes));
     } catch (error) {

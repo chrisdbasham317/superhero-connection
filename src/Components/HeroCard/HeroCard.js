@@ -1,9 +1,12 @@
 import React from 'react';
 
 
-export const HeroCard = ({ }) => {
+export const HeroCard = ({ name }) => {
   return (
-    <h1>HeroCard</h1>
+    <section>
+      {/* <img src={img} alt={`picture of ${name}`} /> */}
+      <h2>{name}</h2>
+    </section>
   )
 }
 
