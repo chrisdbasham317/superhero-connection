@@ -36,9 +36,11 @@ export class App extends Component {
           <Route path='/battle'>
             <BattleGround /> 
           </Route>
-          <Route path='/hero/:id'>
-            <HeroPage />
-          </Route>
+          <Route path='/hero/:id' render={({ match }) => (
+            <HeroPage
+              id={match.params.id}
+            />
+          )}/>
           <Route path='/winner'>
             <WinnerCircle />
           </Route>

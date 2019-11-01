@@ -1,10 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import loadingIcon from '../../images/loading-icon.jpg';
 
 
-const HeroPage = () => {
+const HeroPage = ({ id, heroes }) => {
+  const heroId = parseInt(id.split('').filter(elem => elem !== '}').join(''));
+  const currentHero = heroes.filter(hero => hero.id === heroId)[0];
   return (
-    <h1>HeroPage</h1>
+    <section>
+      {!currentHero && loadingIcon}
+      {currentHero && 
+      <div className='div--loaded-hero-data-render'>
+        <h1>{currentHero.name}</h1>
+        <img src={currentHero.images.md} />
+      </div>    
+      }
+    </section>
   )
 }
 
-export default HeroPage;
+export const mapStateToProps = ({ heroes }) => ({
+  heroes
+})
+
+export default connect(mapStateToProps)(HeroPage);

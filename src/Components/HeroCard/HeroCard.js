@@ -9,7 +9,7 @@ export const HeroCard = ({ id, name, img }) => {
       <img className='img--card-pic' src={img} alt={`picture of ${name}`} />
       <h2>{name}</h2>
       <div className='div--view-more-btn'>
-        <Link className='link--view-more-btn' to={`/hero/${id}`}>More Info</Link>
+        <Link className='link--view-more-btn' to={{ pathname: `/hero/${id}}`, param: id}}>More Info</Link>
       </div>
     </section>
   )
