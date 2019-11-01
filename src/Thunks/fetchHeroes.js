@@ -10,6 +10,7 @@ export const fetchHeroes = () => {
         throw Error(response.statusText)
       }
       let heroes = await response.json();
+      console.log(heroes)
       heroes = getDefaultHeroes(heroes);
       dispatch(isLoading(false));
       dispatch(setHeroes(heroes));
