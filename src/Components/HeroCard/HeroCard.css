@@ -1,14 +1,12 @@
 .section--hero-card {
   align-items: center;
+  background: repeating-radial-gradient(black, transparent  90px);
+  border: 2px solid black;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1vh 2vh;
-  max-width: 160px;
-}
-
-.img--card-pic {
-  max-height: 240px;
+  margin: 1vh 1vh;
   max-width: 160px;
 }
 
@@ -16,6 +14,7 @@
   border-radius: 20px;
   background-color: black;
   height: 20px;
+  margin-bottom: 1vh;
   text-align: center;
   width: 70%;
 }
