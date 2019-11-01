@@ -9,6 +9,7 @@ export const Heroes = ({ heroes, isLoading }) => {
   const heroCards = heroes.map(hero => {
     return (<HeroCard
       key={hero.id}
+      id={hero.id}
       name={hero.name}
       img={hero.images.sm}
     />)

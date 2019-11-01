@@ -2,12 +2,25 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin: 1vh 2vh;
-  max-height: 310px;
   max-width: 160px;
 }
 
 .img--card-pic {
   max-height: 240px;
   max-width: 160px;
+}
+
+.div--view-more-btn {
+  border-radius: 20px;
+  background-color: black;
+  height: 20px;
+  text-align: center;
+  width: 70%;
+}
+
+.link--view-more-btn {
+  text-decoration: none;
+  color: white;
 }
