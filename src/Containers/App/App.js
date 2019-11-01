@@ -22,7 +22,7 @@ export class App extends Component {
   render() {
     return (
       <div className='div--app'>
-        <header>
+        <header className='header--nav-bar'>
           <h1>SuperHero Battle</h1>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/battle'>Battle</NavLink>

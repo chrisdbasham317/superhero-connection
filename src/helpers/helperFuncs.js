@@ -5,6 +5,5 @@ export const getDefaultHeroes = (heroes) => {
       return currentHero.id === id ? currentHero : acc;
     }, [])
   });
-  console.log(defaultHeroes)
   return defaultHeroes;    
 }

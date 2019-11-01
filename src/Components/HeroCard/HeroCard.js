@@ -1,10 +1,11 @@
 import React from 'react';
+import './HeroCard.css';
 
 
-export const HeroCard = ({ name }) => {
+export const HeroCard = ({ name, img }) => {
   return (
-    <section>
-      {/* <img src={img} alt={`picture of ${name}`} /> */}
+    <section className='section--hero-card'>
+      <img className='img--card-pic' src={img} alt={`picture of ${name}`} />
       <h2>{name}</h2>
     </section>
   )

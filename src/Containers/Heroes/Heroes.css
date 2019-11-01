@@ -1,0 +1,7 @@
+.section--heroes {
+  display: flex;
+  flex-flow: row wrap;
+  height: 80vh;
+  overflow: scroll;
+  padding: 0 3vw;
+}
