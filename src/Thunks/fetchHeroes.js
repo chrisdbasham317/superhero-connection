@@ -1,4 +1,5 @@
 import { isLoading, hasErrored, setHeroes } from '../Actions';
+// import { getDefaultHeroes } from '../helpers/helperFuncs';
 
 export const fetchHeroes = () => {
   return async (dispatch) => {
@@ -8,7 +9,9 @@ export const fetchHeroes = () => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const heroes = await response.json();
+      let heroes = await response.json();
+      // heroes = getDefaultHeroes(heroes);
+      // console.log(heroes);
       dispatch(isLoading(false));
       dispatch(setHeroes(heroes));
     } catch (error) {

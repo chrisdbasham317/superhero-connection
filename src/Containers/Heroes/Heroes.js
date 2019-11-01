@@ -2,17 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getDefaultHeroes } from '../../helpers/helperFuncs';
+import HeroCard from '../../Components/HeroCard/HeroCard';
 
-export const Heroes = ({ heroes }) => {
+export const Heroes = ({ heroes, isLoading }) => {
   const defaultHeroes = getDefaultHeroes(heroes.heroes);
-  console.log(defaultHeroes);
+  const heroCards = defaultHeroes.map(hero => {
+    return (<HeroCard
+      key={hero.id}
+      name={hero.name}
+      img={hero.images.md}
+    />)
+  })
   return (
-    <h1>Heroes</h1>
+    <section>
+      {!isLoading && heroCards}
+    </section>
   )
 }
 
-export const mapStateToProps = (heroes) => ({
-  heroes
+export const mapStateToProps = (heroes, isLoading) => ({
+  heroes,
+  isLoading
 })
 
 export default connect(mapStateToProps)(Heroes);
