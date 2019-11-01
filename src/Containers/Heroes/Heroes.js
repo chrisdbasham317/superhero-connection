@@ -1,10 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getDefaultHeroes } from '../../helpers/helperFuncs';
 
-
-const Heroes = () => {
+export const Heroes = ({ heroes }) => {
+  const defaultHeroes = getDefaultHeroes(heroes.heroes);
+  console.log(defaultHeroes);
   return (
     <h1>Heroes</h1>
   )
 }
 
-export default Heroes;
+export const mapStateToProps = (heroes) => ({
+  heroes
+})
+
+export default connect(mapStateToProps)(Heroes);
