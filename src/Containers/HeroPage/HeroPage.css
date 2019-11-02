@@ -1,0 +1,17 @@
+.section--hero-page,
+.div--loaded-hero-data-render {
+  display: flex;
+  flex-direction: row;
+}
+
+.section--name-pic {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw;
+}
+
+.section--hero-info {
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+}

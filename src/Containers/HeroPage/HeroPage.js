@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setCombatant1 } from '../../Actions';
 import { setCombatant2 } from '../../Actions';
 import loadingIcon from '../../images/loading-icon.jpg';
+import './HeroPage.css';
 
 
 const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
@@ -18,25 +19,29 @@ const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
       {!currentHero && loadingIcon}
       {currentHero && 
       <div className='div--loaded-hero-data-render'>
-        <h1 className='h1--hero-name'>{currentHero.name}</h1>
-        <img src={currentHero.images.md} alt={`${currentHero.name} photo`} />
-        <ul className='ul--alias-list'>
-          <p>Aliases</p>
-          {aliases}
-        </ul>
-        <ul className='ul--stats-list'>
-          <p>Attributes</p>
-          {powerStats}
-        </ul>
-        <p>Birth Place: {currentHero.biography.placeOfBirth}</p>
-        <p>First Appearance: {currentHero.biography.firstAppearance}</p>
-        <p>Publisher: {currentHero.biography.publisher}</p>
-        <p>Alignment: {currentHero.biography.alignment}</p>
-        <div className='link--hero-battle-btn'>
-          <Link to='/battle' onClick={() => {
-            return !combatant1 ? setCombatant1(heroId) : setCombatant2(heroId);
-          }}>Choose Hero</Link>
-        </div>
+        <section className='section--name-pic'>
+          <h1 className='h1--hero-name'>{currentHero.name}</h1>
+          <img src={currentHero.images.md} alt={`${currentHero.name} photo`} />
+        </section>
+        <section className='section--hero-info'>
+          <ul className='ul--alias-list'>
+            <p>Aliases</p>
+            {aliases}
+          </ul>
+          <ul className='ul--stats-list'>
+            <p>Attributes</p>
+            {powerStats}
+          </ul>
+          <p>Birth Place: {currentHero.biography.placeOfBirth}</p>
+          <p>First Appearance: {currentHero.biography.firstAppearance}</p>
+          <p>Publisher: {currentHero.biography.publisher}</p>
+          <p>Alignment: {currentHero.biography.alignment}</p>
+          <div className='link--hero-battle-btn'>
+            <Link to='/battle' onClick={() => {
+              return !combatant1 ? setCombatant1(heroId) : setCombatant2(heroId);
+            }}>Choose Hero</Link>
+          </div>
+        </section>
       </div>    
       }
     </section>
