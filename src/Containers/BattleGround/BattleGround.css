@@ -1,0 +1,80 @@
+.section--battle-ground {
+  background: url('https://image.freepik.com/free-vector/modern-comic-book-background-with-ray_1035-8002.jpg');
+  background-position-y: center;
+  background-size: cover;
+  height: 94vh;
+}
+
+
+.form--hero-selection {
+  align-items: center;
+  border: 5px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  left: 35vw;
+  padding: 2%;
+  position: absolute;
+  /* text-align: center; */
+  top: 30vh;
+  width: 35vw;
+}
+
+.h1--hero-form {
+  color: #ffffff;
+}
+
+label {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+select {
+  font-size: 1.5rem;
+  height: 5vh;
+  margin-bottom: 5vh;
+  width: 70%;
+}
+
+.button--start-fight {
+  border-radius: 20px;
+  font-size: 1.25rem;
+  height: 5vh;
+  width: 50%;
+}
+
+.button--start-fight:hover {
+  background: rgb(220, 145, 6);
+  color: #ffffff;
+  height: 6vh;
+  width: 52%;
+}
+
+.section--heroes-selected {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div--hero-1,
+.div--hero-2 {
+  max-width: 345px;
+  width: 33vw;
+}
+
+.img--fight-icon {
+  align-self: center;
+  height: 30vh;
+  width: auto;
+}
+
+.button--winner {
+  align-self: center;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  height: 10vh;
+}
+
+.link--winner {
+  color: #000000;
+  text-decoration: unset;
+}

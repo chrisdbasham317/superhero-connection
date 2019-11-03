@@ -1,22 +1,50 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'McLaren', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header--nav-bar {
+  align-items: flex-end;
+  background-image: url('https://vignette.wikia.nocookie.net/the-super-heroes/images/0/0e/Community-header-background/revision/latest?cb=20171001150757');
+  background-position-y: -175px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+  height: 15vh;
+  justify-content: space-between;
+  -webkit-text-stroke: .5px #000000;
 }
 
-.App-link {
-  color: #09d3ac;
+.h1--main-title {
+  font-size: 3rem;
+  margin: 0px;
+  padding-left: 2vw;
+}
+
+.div--nav-links {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.WelcomeModal {
+  background: white;
+  border: 3px outset darkgrey;
+  border-radius: 15px;
+  height: fit-content;
+  left: 20vw;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  top: 30vh;
+  width: 60vw;
+}
+
+.links {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.active {
+  font-size: 1.8rem;
+  text-decoration: underline;
 }

@@ -1,0 +1,62 @@
+.section--hero-page,
+.div--loaded-hero-data-render {
+  background-image: url('https://i.pinimg.com/originals/2f/69/14/2f69142f096557e7b5a4efed8a4ca66f.jpg');
+  display: flex;
+  color: #ffffff;
+  flex-direction: row;
+}
+
+.section--name-pic {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw;
+}
+
+.h1--hero-name {
+  font-size: 2rem;
+}
+
+.link--hero-battle-btn {
+  align-items: center;
+  align-self: center;
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  height: 5vh;
+  justify-content: center;
+  margin: 5vh;
+  width: 60%;
+}
+
+.link--add-hero {
+  color: #000000;
+  text-decoration: unset;
+}
+
+.section--hero-info {
+  background: #000000;
+  border: 3px solid grey;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  opacity: .7;
+  padding-left: 3vw;
+  height: fit-content;
+  margin: 16vh 0 5vh 0;
+  width: 57vw;
+}
+
+.h2--info-label {
+  font-size: 1.65rem;
+  margin: 1vh 0;
+  text-decoration: overline;
+}
+
+.li--stats {
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}

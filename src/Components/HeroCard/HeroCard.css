@@ -1,0 +1,25 @@
+.section--hero-card {
+  align-items: center;
+  background: #413f3f;
+  border: 2px solid #413f3f;
+  border-radius: 5px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1vh 1vh;
+}
+
+.div--view-more-btn {
+  border-radius: 20px;
+  background-color: #ffffff;
+  height: 20px;
+  margin-bottom: 1vh;
+  text-align: center;
+  width: 70%;
+}
+
+.link--view-more-btn {
+  text-decoration: none;
+  color: #000000;
+}

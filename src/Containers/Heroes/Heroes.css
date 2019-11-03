@@ -1,0 +1,8 @@
+.section--heroes {
+  background-image: url('https://i.pinimg.com/originals/2f/69/14/2f69142f096557e7b5a4efed8a4ca66f.jpg');
+  display: flex;
+  flex-flow: row wrap;
+  height: 85vh;
+  justify-content: space-around;
+  overflow: scroll;
+}
