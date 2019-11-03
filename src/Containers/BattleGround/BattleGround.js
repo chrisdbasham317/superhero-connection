@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { HeroCard } from '../../Components/HeroCard/HeroCard';
+import { setCombatant1, setCombatant2 } from '../../Actions';
+
 import './BattleGround.css';
+import { bindActionCreators } from 'redux';
 
 export class BattleGround extends Component {
   constructor(combatant1, combatant2) {
@@ -14,15 +17,41 @@ export class BattleGround extends Component {
     }
   }
 
-  determineSelectStatus = (heroName, combatantNum) => {
-    return this.props[`combatant${combatantNum}`] === heroName ? true : false;
+  setDefaultBattle = () => {
+    if (this.state.challenger1 === '') {
+      this.setState({ challenger1: 'Aquaman' })
+      if (this.state.challenger2 === '') {
+        this.setState({challenger2 : 'Aquaman'})
+      }
+    } else if (this.state.challenger2 === '') {
+      this.setState({ challenger2: 'Aquaman' })
+      if (this.state.challenger2 === '') {
+        this.setState({challenger2 : 'Aquaman'})
+      }
+    }
   }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    await this.setDefaultBattle()
+    this.props.setCombatant1(this.state.challenger1);
+    this.props.setCombatant2(this.state.challenger2);
+    this.setState({modalState: false})
+  }
+
   render() {
-    const hero1 = this.props.heroes.filter(hero => hero.id === this.props.combatant1);
-    const hero2 = this.props.heroes.filter(hero => hero.id === this.props.combatant2);
+    const hero1 = this.props.heroes.filter(hero => hero.name === this.props.combatant1);
+    const hero2 = this.props.heroes.filter(hero => hero.name === this.props.combatant2);
     const renderReady = [...hero1, ...hero2];
-    const options1 = this.props.heroes.map(hero => <option value={`${hero.name}`} selected={this.determineSelectStatus(hero.name, 1)}>{hero.name}</option>)
-    const options2 = this.props.heroes.map(hero => <option value={`${hero.name}`} selected={this.determineSelectStatus(hero.name, 2)}>{hero.name}</option>)
+    const options = this.props.heroes.map(hero => <option
+      value={`${hero.name}`}
+    >{hero.name}</option>)
     return (
       <section className='section--battle-ground'>
         <section className='section--heroes-modal'>
@@ -45,15 +74,28 @@ export class BattleGround extends Component {
             overlayClassName="HeroSelectionFormOverlay"
           >
             <form className='form--hero-selection'>
-              <h1>Select Your Heroes</h1>
-              <select>{options1}</select>
-              <select>{options2}</select>
-              <button className='button-start-fight'>Fight!</button>
+              <h1 className='h1--hero-form'>Select Your Heroes</h1>
+              <label htmlFor='challenger1'>Hero 1:</label>
+              <select
+                defaultValue={this.state.challenger1}
+                name='challenger1'
+                onChange={(event) => this.handleChange(event)}
+              >{options}</select>
+              <label htmlFor='challenger2'>Hero 2:</label>
+              <select
+                defaultValue={this.state.challenger2}
+                name='challenger2'
+                onChange={(event) => this.handleChange(event)}
+              >{options}</select>
+              <button
+                className='button--start-fight'
+                onClick={(event) => this.handleSubmit(event)}
+              >Fight!</button>
             </form>
           </ReactModal>
         </section>
-        {renderReady.length > 1 ? <section className='section--heroes-selected'>
-          <div>
+        {!this.state.modalState && <section className='section--heroes-selected'>
+          <div className='div--hero-1'>
             <HeroCard
               key={hero1[0].id}
               id={hero1[0].id}
@@ -61,7 +103,7 @@ export class BattleGround extends Component {
               img={hero1[0].images.md}
             />
           </div>
-          <div>
+          <div className='div--hero-2'>
             <HeroCard
               key={hero2[0].id}
               id={hero2[0].id}
@@ -69,7 +111,7 @@ export class BattleGround extends Component {
               img={hero2[0].images.md}
             />
           </div>
-        </section> : null}
+        </section>}
       </section>
     )
   }  
@@ -80,6 +122,13 @@ export const mapStateToProps = ({ heroes, combatant1, combatant2, toggleModal })
   combatant1,
   combatant2,
   toggleModal
-})
+});
 
-export default connect(mapStateToProps)(BattleGround);
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({
+    setCombatant1,
+    setCombatant2
+  }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(BattleGround);

@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 import './HeroCard.css';
 
 
-export const HeroCard = ({ id, name, img }) => {
+export const HeroCard = ({ id, name, img })  => {
+  const currentPath = window.location.pathname
+  console.log(currentPath)
   return (
     <section className='section--hero-card'>
       <img className='img--card-pic' src={img} alt={`picture of ${name}`} />
       <h2>{name}</h2>
-      <div className='div--view-more-btn'>
-        <Link className='link--view-more-btn' to={{ pathname: `/hero/${id}}`, param: id}}>More Info</Link>
-      </div>
+      {currentPath !== '/battle' && <div className='div--view-more-btn'>
+        <Link
+          className='link--view-more-btn'
+          to={{ pathname: `/hero/${id}}`, param: id }}>More Info</Link>
+      </div>}
     </section>
   )
 }
