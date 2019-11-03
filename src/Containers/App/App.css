@@ -26,6 +26,19 @@ body {
   width: 25%;
 }
 
+.WelcomeModal {
+  background: white;
+  border: 3px outset darkgrey;
+  border-radius: 15px;
+  height: fit-content;
+  left: 20vw;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  top: 30vh;
+  width: 60vw;
+}
+
 .links {
   color: #ffffff;
   text-decoration: none;
