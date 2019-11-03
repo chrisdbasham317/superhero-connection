@@ -8,7 +8,7 @@ export const WinnerCircle = ({winner, heroes}) => {
     <section className='section--winner-circle'>
     {!winner && <h1>It seems those heroes are evenly matched</h1>}
       {winner &&
-      <section className='section--winner-circle'>
+      <section>
         <h1 className='h1--winner-circle'>WinnerCircle</h1>
         <div className='div--winner-info'>
           <h2 className='h2--winner-name'>{winnerInfo.name}</h2>

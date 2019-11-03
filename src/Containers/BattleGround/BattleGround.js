@@ -75,6 +75,8 @@ export class BattleGround extends Component {
       return this.props.setWinner(this.state.challenger1)
     } else if (hero1Counter < hero2Counter) {
       return this.props.setWinner(this.state.challenger2)
+    } else {
+      return this.props.setWinner(null)
     }
   }
 
