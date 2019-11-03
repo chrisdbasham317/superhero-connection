@@ -13,9 +13,9 @@ export const setHeroes = heroes => ({
   heroes
 });
 
-export const setWinner = id => ({
+export const setWinner = name => ({
   type: 'SET_WINNER',
-  winnerId: id
+  name
 });
 
 export const setModal = bool => ({

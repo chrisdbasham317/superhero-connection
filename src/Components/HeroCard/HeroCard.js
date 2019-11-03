@@ -5,7 +5,6 @@ import './HeroCard.css';
 
 export const HeroCard = ({ id, name, img })  => {
   const currentPath = window.location.pathname
-  console.log(currentPath)
   return (
     <section className='section--hero-card'>
       <img className='img--card-pic' src={img} alt={`picture of ${name}`} />

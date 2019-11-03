@@ -57,5 +57,6 @@ select {
 
 .div--hero-1,
 .div--hero-2 {
+  max-width: 345px;
   width: 33vw;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { HeroCard } from '../../Components/HeroCard/HeroCard';
-import { setCombatant1, setCombatant2 } from '../../Actions';
+import { setCombatant1, setCombatant2, setWinner } from '../../Actions';
 
 import './BattleGround.css';
 import { bindActionCreators } from 'redux';
@@ -42,7 +42,34 @@ export class BattleGround extends Component {
     await this.setDefaultBattle()
     this.props.setCombatant1(this.state.challenger1);
     this.props.setCombatant2(this.state.challenger2);
-    this.setState({modalState: false})
+    this.setState({ modalState: false });
+    this.determineWinner()
+  }
+
+  determineWinner = () => {
+    const hero1Stats = this.props.heroes.filter(hero => hero.name === this.props.combatant1)[0].powerstats;
+    const hero2Stats = this.props.heroes.filter(hero => hero.name === this.props.combatant2)[0].powerstats;
+    const attributes = Object.keys(hero1Stats);
+    let hero1Counter = 0;
+    let hero2Counter = 0;
+    attributes.map(attr => {
+      if (hero1Stats[attr] > hero2Stats[attr]) {
+        hero1Counter++
+      } else if (hero1Stats[attr] < hero2Stats[attr]) {
+        hero2Counter++
+      }
+    });
+    return this.setWinner(hero1Counter, hero2Counter);
+  }
+  
+  setWinner = (hero1Counter, hero2Counter) => {
+    console.log('here')
+    console.log(hero1Counter, hero2Counter)
+    if (hero1Counter > hero2Counter) {
+      return this.props.setWinner(this.state.challenger1)
+    } else if (hero1Counter < hero2Counter) {
+      return this.props.setWinner(this.state.challenger2)
+    }
   }
 
   render() {
@@ -127,7 +154,8 @@ export const mapStateToProps = ({ heroes, combatant1, combatant2, toggleModal })
 export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     setCombatant1,
-    setCombatant2
+    setCombatant2,
+    setWinner
   }, dispatch)
 )
 
