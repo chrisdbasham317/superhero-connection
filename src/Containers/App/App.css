@@ -4,12 +4,13 @@ body {
 
 .header--nav-bar {
   align-items: flex-end;
-  background-image: url('https://static.skillshare.com/uploads/discussion/tmp/c18a7b07');
+  background-image: url('https://vignette.wikia.nocookie.net/the-super-heroes/images/0/0e/Community-header-background/revision/latest?cb=20171001150757');
+  background-position-y: -175px;
   display: flex;
-  color: #000000;
+  color: #ffffff;
   height: 15vh;
   justify-content: space-between;
-  -webkit-text-stroke: 1px #ffffff;
+  -webkit-text-stroke: .5px #000000;
 }
 
 .h1--main-title {
@@ -26,5 +27,10 @@ body {
 }
 
 .links {
+  color: #ffffff;
   text-decoration: none;
+}
+
+.link.active {
+  text-decoration: underline;
 }

@@ -21,14 +21,19 @@ export const setWinner = id => ({
 export const setModal = bool => ({
   type: 'SET_MODAL',
   bool
-})
+});
 
-export const setCombatant1 = (id) => ({
+export const setCombatant1 = name => ({
   type: 'SET_COMBATANT_1',
-  id
-})
+  name
+});
 
-export const setCombatant2 = (id) => ({
+export const setCombatant2 = name => ({
   type: 'SET_COMBATANT_2',
-  id
-})
+  name
+});
+
+export const toggleModal = bool => ({
+  type: 'TOGGLE_MODAL',
+  bool
+});

@@ -1,7 +1,7 @@
-export const combatant1 = (state = null, action) => {
+export const combatant1 = (state = '', action) => {
   switch (action.type) {
     case 'SET_COMBATANT_1':
-      return action.id;
+      return action.name;
     default:
       return state;
   }

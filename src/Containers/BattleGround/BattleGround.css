@@ -1,0 +1,13 @@
+.section--battle-ground {
+  background: url('https://image.freepik.com/free-vector/modern-comic-book-background-with-ray_1035-8002.jpg');
+  background-position-y: center;
+  background-size: cover;
+  height: 85vh;
+}
+
+
+.form--hero-selection {
+  left: 35vw;
+  position: absolute;
+  top: 30vh;
+}

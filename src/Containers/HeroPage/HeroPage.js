@@ -11,6 +11,7 @@ import './HeroPage.css';
 const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
   const heroId = parseInt(id.split('').filter(elem => elem !== '}').join(''));
   const currentHero = heroes.filter(hero => hero.id === heroId)[0];
+  const heroName = currentHero.name
   const attributes = currentHero ? Object.keys(currentHero.powerstats) : null;
   const aliases = currentHero ? currentHero.biography.aliases.map(alias => <li>{alias}</li>) : null;
   const powerStats = currentHero ? attributes.map(stat => <li className='li--stats'>{`${stat}: ${currentHero.powerstats[stat]}`}</li>) : null;
@@ -20,11 +21,11 @@ const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
       {currentHero && 
       <div className='div--loaded-hero-data-render'>
         <section className='section--name-pic'>
-          <h1 className='h1--hero-name'>{currentHero.name}</h1>
-          <img src={currentHero.images.md} alt={`${currentHero.name} photo`} />
+          <h1 className='h1--hero-name'>{heroName}</h1>
+          <img src={currentHero.images.md} alt={`${heroName} photo`} />
           <div className='link--hero-battle-btn'>
             <Link className='link--add-hero' to='/battle' onClick={() => {
-              return !combatant1 ? setCombatant1(heroId) : setCombatant2(heroId);
+              return !combatant1 ? setCombatant1(heroName) : setCombatant2(heroName);
             }}>Choose Hero</Link>
           </div>
         </section>
