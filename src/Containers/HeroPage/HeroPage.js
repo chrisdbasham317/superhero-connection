@@ -13,7 +13,7 @@ const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
   const currentHero = heroes.filter(hero => hero.id === heroId)[0];
   const attributes = currentHero ? Object.keys(currentHero.powerstats) : null;
   const aliases = currentHero ? currentHero.biography.aliases.map(alias => <li>{alias}</li>) : null;
-  const powerStats = currentHero ? attributes.map(stat => <li>{`${stat}: ${currentHero.powerstats[stat]}`}</li>) : null;
+  const powerStats = currentHero ? attributes.map(stat => <li className='li--stats'>{`${stat}: ${currentHero.powerstats[stat]}`}</li>) : null;
   return (
     <section className='section--hero-page'>
       {!currentHero && loadingIcon}
@@ -22,25 +22,29 @@ const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
         <section className='section--name-pic'>
           <h1 className='h1--hero-name'>{currentHero.name}</h1>
           <img src={currentHero.images.md} alt={`${currentHero.name} photo`} />
-        </section>
-        <section className='section--hero-info'>
-          <ul className='ul--alias-list'>
-            <p>Aliases</p>
-            {aliases}
-          </ul>
-          <ul className='ul--stats-list'>
-            <p>Attributes</p>
-            {powerStats}
-          </ul>
-          <p>Birth Place: {currentHero.biography.placeOfBirth}</p>
-          <p>First Appearance: {currentHero.biography.firstAppearance}</p>
-          <p>Publisher: {currentHero.biography.publisher}</p>
-          <p>Alignment: {currentHero.biography.alignment}</p>
           <div className='link--hero-battle-btn'>
-            <Link to='/battle' onClick={() => {
+            <Link className='link--add-hero' to='/battle' onClick={() => {
               return !combatant1 ? setCombatant1(heroId) : setCombatant2(heroId);
             }}>Choose Hero</Link>
           </div>
+        </section>
+        <section className='section--hero-info'>
+          <h2 className='h2--info-label'>Aliases</h2>
+          <ul className='ul--alias-list'>
+            {aliases}
+          </ul>
+          <h2 className='h2--info-label'>Attributes</h2>
+          <ul className='ul--stats-list'>
+            {powerStats}
+          </ul>
+          <h2 className='h2--info-label'>Birth Place:</h2>
+          <p>{currentHero.biography.placeOfBirth}</p>
+          <h2 className='h2--info-label'>First Appearance:</h2>
+          <p>{currentHero.biography.firstAppearance}</p>
+          <h2 className='h2--info-label'>Publisher:</h2>
+          <p>{currentHero.biography.publisher}</p>
+          <h2 className='h2--info-label'>Alignment:</h2>
+          <p>{currentHero.biography.alignment}</p>
         </section>
       </div>    
       }
