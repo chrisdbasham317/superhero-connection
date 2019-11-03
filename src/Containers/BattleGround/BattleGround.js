@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { HeroCard } from '../../Components/HeroCard/HeroCard';
 import { setCombatant1, setCombatant2, setWinner } from '../../Actions';
-
+import fight_icon from '../../images/fight-icon.gif'; 
 import './BattleGround.css';
 import { bindActionCreators } from 'redux';
 
@@ -13,7 +14,8 @@ export class BattleGround extends Component {
     this.state = {
       challenger1: this.props.combatant1,
       challenger2: this.props.combatant2,
-      modalState: true
+      modalState: true,
+      timerComplete: true
     }
   }
 
@@ -44,6 +46,12 @@ export class BattleGround extends Component {
     this.props.setCombatant2(this.state.challenger2);
     this.setState({ modalState: false });
     this.determineWinner()
+    this.displayTimer()
+  }
+
+  displayTimer = () => {
+    this.setState({timerComplete: false})
+    setTimeout(() => { this.setState({ timerComplete: true }) }, 5000);
   }
 
   determineWinner = () => {
@@ -63,8 +71,6 @@ export class BattleGround extends Component {
   }
   
   setWinner = (hero1Counter, hero2Counter) => {
-    console.log('here')
-    console.log(hero1Counter, hero2Counter)
     if (hero1Counter > hero2Counter) {
       return this.props.setWinner(this.state.challenger1)
     } else if (hero1Counter < hero2Counter) {
@@ -130,6 +136,8 @@ export class BattleGround extends Component {
               img={hero1[0].images.md}
             />
           </div>
+          {!this.state.timerComplete && <img className='img--fight-icon'src={fight_icon} alt='determining winner gif'/>}
+          {this.state.timerComplete && <button className='button--winner'><Link to='/winner' className='link--winner'>See Results!</Link></button>}
           <div className='div--hero-2'>
             <HeroCard
               key={hero2[0].id}

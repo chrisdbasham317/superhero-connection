@@ -60,3 +60,21 @@ select {
   max-width: 345px;
   width: 33vw;
 }
+
+.img--fight-icon {
+  align-self: center;
+  height: 30vh;
+  width: auto;
+}
+
+.button--winner {
+  align-self: center;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  height: 10vh;
+}
+
+.link--winner {
+  color: #000000;
+  text-decoration: unset;
+}
