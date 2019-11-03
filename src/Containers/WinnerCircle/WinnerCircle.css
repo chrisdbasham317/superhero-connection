@@ -1,0 +1,24 @@
+.section--winner-circle {
+  align-items: center;
+  background: url('https://ae01.alicdn.com/kf/HTB1fC1eXyzxK1RjSspjq6AS.pXaU/Laeacco-Stage-Backgrounds-Shiny-Spotlight-Podium-Show-Red-Carpet-Polka-Dots-Kid-Portrait-Photo-Backdrops-Photocall.jpg_q50.jpg');
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+}
+
+.h1--winner-circle{
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.h2--winner-name {
+  text-align: center;
+}
+
+.img--winner-img {
+  border: 8px outset darkslategrey;
+  height: 55vh;
+}
