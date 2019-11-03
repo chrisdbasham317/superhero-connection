@@ -25,8 +25,8 @@ export class App extends Component {
         <header className='header--nav-bar'>
           <h1 className='h1--main-title'>SuperHero Battle</h1>
           <div className='div--nav-links'>
-            <NavLink className='links' to='/'>Home</NavLink>
-            <NavLink className='links' to='/battle'>Battle</NavLink>
+            <NavLink exact activeClassName='active' className='links' to='/'>Home</NavLink>
+            <NavLink activeClassName='active' className='links' to='/battle'>Battle</NavLink>
           </div>
         </header>
         <main>
