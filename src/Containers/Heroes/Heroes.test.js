@@ -42,5 +42,17 @@ describe('Heroes', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  
+  it('should return an object with the heroes array, and isLoading', () => {
+    const mockState = {
+      heroes: mockHeroes,
+      isLoading: false      
+    }
+    const expected = {
+      heroes: mockHeroes,
+      isLoading: false
+    };
+    const mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
+  });  
 })
