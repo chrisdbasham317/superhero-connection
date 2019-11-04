@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattleGround should match the snapshot 1`] = `
+<section
+  className="section--battle-ground"
+>
+  <section
+    className="section--heroes-modal"
+  >
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="HeroSelectionFormModal"
+      closeTimeoutMS={0}
+      contentLabel="Hero Selections"
+      isOpen={true}
+      overlayClassName="HeroSelectionFormOverlay"
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      role="dialog"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {},
+          "overlay": Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.85)",
+            "bottom": 0,
+            "left": 0,
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          },
+        }
+      }
+    >
+      <form
+        className="form--hero-selection"
+      >
+        <h1
+          className="h1--hero-form"
+        >
+          Select Your Heroes
+        </h1>
+        <label
+          htmlFor="challenger1"
+        >
+          Hero 1:
+        </label>
+        <select
+          defaultValue="superman"
+          name="challenger1"
+          onChange={[Function]}
+        >
+          <option
+            key="4"
+            value="superman"
+          >
+            superman
+          </option>
+          <option
+            key="5"
+            value="superboy"
+          >
+            superboy
+          </option>
+        </select>
+        <label
+          htmlFor="challenger2"
+        >
+          Hero 2:
+        </label>
+        <select
+          defaultValue="superboy"
+          name="challenger2"
+          onChange={[Function]}
+        >
+          <option
+            key="4"
+            value="superman"
+          >
+            superman
+          </option>
+          <option
+            key="5"
+            value="superboy"
+          >
+            superboy
+          </option>
+        </select>
+        <button
+          className="button--start-fight"
+          onClick={[Function]}
+        >
+          Fight!
+        </button>
+      </form>
+    </Modal>
+  </section>
+</section>
+`;

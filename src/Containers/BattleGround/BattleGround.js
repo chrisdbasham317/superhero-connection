@@ -85,6 +85,7 @@ export class BattleGround extends Component {
     const hero2 = this.props.heroes.filter(hero => hero.name === this.props.combatant2);
     const renderReady = [...hero1, ...hero2];
     const options = this.props.heroes.map(hero => <option
+      key={hero.id}
       value={`${hero.name}`}
     >{hero.name}</option>)
     return (
@@ -154,11 +155,10 @@ export class BattleGround extends Component {
   }  
 }
 
-export const mapStateToProps = ({ heroes, combatant1, combatant2, toggleModal }) => ({
+export const mapStateToProps = ({ heroes, combatant1, combatant2 }) => ({
   heroes,
   combatant1,
   combatant2,
-  toggleModal
 });
 
 export const mapDispatchToProps = (dispatch) => (

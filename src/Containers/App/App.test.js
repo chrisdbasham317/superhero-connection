@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { bindActionCreators } from 'redux'; 
 import { App, mapDispatchToProps } from './App';
 import { fetchHeroes } from '../../Thunks/fetchHeroes';
 
