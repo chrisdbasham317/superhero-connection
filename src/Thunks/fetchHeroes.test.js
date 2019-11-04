@@ -32,10 +32,17 @@ describe('fetchHeroes', () => {
   });
 
   it('should call getDefaultHeroes helper function with correct arg', () => {
-    const expected = {results: [{ name: 'superman' }]}
+    const expected = { results: [{ name: 'superman' }] }
     const thunk = fetchHeroes();
     thunk(mockDispatch);
 
     expect(getDefaultHeroes).toHaveBeenCalledWith(expected)
+  });
+
+  it('should dispatch isLoading(false)', async () => {
+    const thunk = fetchHeroes();
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   })
 })
