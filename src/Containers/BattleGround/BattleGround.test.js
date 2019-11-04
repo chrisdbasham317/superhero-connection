@@ -66,4 +66,15 @@ describe('BattleGround', () => {
     wrapper.find('select').first().simulate('change', mockEvent);
     expect(mockHandleChange).toHaveBeenCalledWith(mockEvent);
   });
+
+  it('should update state when handleChange is called', () => {
+    const mockEvent = {
+      target: {
+        name: 'challenger1',
+        value: 'Bane'
+      }
+    };
+    wrapper.instance().handleChange(mockEvent);
+    expect(wrapper.state().challenger1).toEqual('Bane');
+  })
 })
