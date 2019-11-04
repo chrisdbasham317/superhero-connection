@@ -149,10 +149,15 @@ describe('BattleGround', () => {
     expect(wrapper.state().timerComplete).toEqual(true);
   });
 
-  it('should call setWinner when determineWinner is called', () => {
+  it('should call setWinner with correct args when determineWinner is called', () => {
     const mockSetWinner = jest.fn();
     wrapper.instance().setWinner = mockSetWinner;
     wrapper.instance().determineWinner();
     expect(mockSetWinner).toHaveBeenCalledWith(1, 0);
-  })
+  });
+
+  it('should call setWinner with correct args', () => {
+    wrapper.instance().determineWinner;
+    expect(mockSetWinner).toHaveBeenCalledWith('superman');
+  });
 })
