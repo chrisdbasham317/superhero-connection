@@ -76,5 +76,15 @@ describe('BattleGround', () => {
     };
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state().challenger1).toEqual('Bane');
-  })
+  });
+
+  it('should call handleSubmit when submit btn is clicked', () => {
+    const mockHandleSubmit = jest.fn();
+    wrapper.instance().handleSubmit = mockHandleSubmit;
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+    wrapper.find('.button--start-fight').simulate('click', mockEvent);
+    expect(mockHandleSubmit).toHaveBeenCalledWith(mockEvent);
+  });
 })
