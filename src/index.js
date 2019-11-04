@@ -8,7 +8,6 @@ import rootReducer from './Reducers/index';
 import './index.css';
 import App from './Containers/App/App';
 import thunk from 'redux-thunk';
-import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
@@ -21,4 +20,3 @@ ReactDOM.render(
     document.getElementById('root')
   );
   
-  serviceWorker.unregister();
