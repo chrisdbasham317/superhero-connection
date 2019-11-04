@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -169,3 +170,13 @@ export const mapDispatchToProps = (dispatch) => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(BattleGround);
+
+BattleGround.propTypes = {
+  id: PropTypes.string,
+  heroes: PropTypes.array,
+  combatant1: PropTypes.string,
+  combatant2: PropTypes.string,
+  setCombatant1: PropTypes.func,
+  setCombatant2: PropTypes.func,
+  setWinner: PropTypes.func
+}

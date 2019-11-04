@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './WinnerCircle.css'
 
@@ -25,3 +26,8 @@ export const mapStateToProps = ({winner, heroes}) => ({
 })
 
 export default connect(mapStateToProps)(WinnerCircle);
+
+WinnerCircle.propTypes = {
+  winner: PropTypes.string,
+  heroes: PropTypes.array
+}

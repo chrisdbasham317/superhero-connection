@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -63,3 +64,11 @@ export const mapDispatchToProps = (dispatch) => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeroPage);
+
+HeroPage.propTypes = {
+  id: PropTypes.string,
+  heroes: PropTypes.array,
+  combatant1: PropTypes.string,
+  setCombatant1: PropTypes.func,
+  setCombatant2: PropTypes.func
+}
