@@ -96,11 +96,21 @@ describe('BattleGround', () => {
         preventDefault: jest.fn()
       }
     });
-    it('should call a series of methods when handleSubmit is called', () => {
+    it('should call setDefaultBattle when handleSubmit is called', () => {
       const mockSetDefaultBattle = jest.fn();
       wrapper.instance().setDefaultBattle = mockSetDefaultBattle;
       wrapper.instance().handleSubmit(mockEvent);
       expect(mockSetDefaultBattle).toHaveBeenCalled();
     });
-  })
+
+    it('should call setCombatant1 when handleSubmit is called', () => {
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockSetCombatant1).toHaveBeenCalledWith('superman');
+    });
+
+    it('should call setCombatant2 when handleSubmit is called', () => {
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockSetCombatant2).toHaveBeenCalledWith('superboy');
+    }); 
+  });
 })
