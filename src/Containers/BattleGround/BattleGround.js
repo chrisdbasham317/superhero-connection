@@ -62,9 +62,9 @@ export class BattleGround extends Component {
     let hero2Counter = 0;
     attributes.map(attr => {
       if (hero1Stats[attr] > hero2Stats[attr]) {
-        hero1Counter++
+        return hero1Counter++
       } else if (hero1Stats[attr] < hero2Stats[attr]) {
-        hero2Counter++
+        return hero2Counter++
       }
     });
     return this.setWinner(hero1Counter, hero2Counter);
@@ -83,7 +83,6 @@ export class BattleGround extends Component {
   render() {
     const hero1 = this.props.heroes.filter(hero => hero.name === this.props.combatant1);
     const hero2 = this.props.heroes.filter(hero => hero.name === this.props.combatant2);
-    const renderReady = [...hero1, ...hero2];
     const options = this.props.heroes.map(hero => <option
       key={hero.id}
       value={`${hero.name}`}

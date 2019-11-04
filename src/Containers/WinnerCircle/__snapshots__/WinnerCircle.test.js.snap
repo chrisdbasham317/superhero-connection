@@ -19,6 +19,7 @@ exports[`WinnerCircle should match the snapshot 1`] = `
         Superman
       </h2>
       <img
+        alt="Winner"
         className="img--winner-img"
         src="medium image"
       />

@@ -22,7 +22,7 @@ export const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 
       <div className='div--loaded-hero-data-render'>
         <section className='section--name-pic'>
           <h1 className='h1--hero-name'>{heroName}</h1>
-          <img src={currentHero.images.md} alt={`${heroName} photo`} />
+          <img src={currentHero.images.md} alt={`${heroName}`} />
           <div className='link--hero-battle-btn'>
             <Link className='link--add-hero' to='/battle' onClick={() => {
               return !combatant1 ? setCombatant1(heroName) : setCombatant2(heroName);

@@ -5,7 +5,7 @@ exports[`HeroCard should match the snapshot 1`] = `
   className="section--hero-card"
 >
   <img
-    alt="picture of Superman"
+    alt="Superman"
     className="img--card-pic"
     src="thisIsAnImage"
   />

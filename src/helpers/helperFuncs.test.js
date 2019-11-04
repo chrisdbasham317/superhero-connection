@@ -98,7 +98,7 @@ describe('getDefaultHeroes', () => {
       {
         id: 686,
         name: 'Superman'
-      },
+      }
     ];
     expect(mockHeroes.length).toEqual(24);
     const result = getDefaultHeroes(mockHeroes);

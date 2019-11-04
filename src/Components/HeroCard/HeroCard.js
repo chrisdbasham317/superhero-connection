@@ -7,7 +7,7 @@ export const HeroCard = ({ id, name, img })  => {
   const currentPath = window.location.pathname
   return (
     <section className='section--hero-card'>
-      <img className='img--card-pic' src={img} alt={`picture of ${name}`} />
+      <img className='img--card-pic' src={img} alt={`${name}`} />
       <h2>{name}</h2>
       {currentPath !== '/battle' && <div className='div--view-more-btn'>
         <Link
