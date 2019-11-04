@@ -182,4 +182,33 @@ describe('BattleGround', () => {
       expect(mappedProps).toEqual(expected);
     });
   });
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with setCombatant1', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setCombatant1();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setCombatant1(actionToDispatch);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('calls dispatch with setCombatant2', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setCombatant2();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setCombatant2(actionToDispatch);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('calls dispatch with setWinner', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setWinner();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setWinner(actionToDispatch);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+  });
 })
