@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getDefaultHeroes } from '../../helpers/helperFuncs';
 import HeroCard from '../../Components/HeroCard/HeroCard';
 import './Heroes.css';
 
