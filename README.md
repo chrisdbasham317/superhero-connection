@@ -59,10 +59,9 @@ Here is screen shot walkthrough of the app:
 
 ## Take It For A Spin
 
-This site requres a few steps to get full functionality.
 To view the site and get more info about superheros follow this site:
 
-Coming soon!
+https://aqueous-plateau-46817.herokuapp.com/
 
 ## Why'd I Do This?
 
