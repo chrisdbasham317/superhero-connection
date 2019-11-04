@@ -8,13 +8,13 @@ import loadingIcon from '../../images/loading-icon.jpg';
 import './HeroPage.css';
 
 
-const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
+export const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
   const heroId = parseInt(id.split('').filter(elem => elem !== '}').join(''));
   const currentHero = heroes.filter(hero => hero.id === heroId)[0];
   const heroName = currentHero.name
   const attributes = currentHero ? Object.keys(currentHero.powerstats) : null;
-  const aliases = currentHero ? currentHero.biography.aliases.map(alias => <li>{alias}</li>) : null;
-  const powerStats = currentHero ? attributes.map(stat => <li className='li--stats'>{`${stat}: ${currentHero.powerstats[stat]}`}</li>) : null;
+  const aliases = currentHero ? currentHero.biography.aliases.map(alias => <li key={alias}>{alias}</li>) : null;
+  const powerStats = currentHero ? attributes.map(stat => <li key={stat} className='li--stats'>{`${stat}: ${currentHero.powerstats[stat]}`}</li>) : null;
   return (
     <section className='section--hero-page'>
       {!currentHero && loadingIcon}
@@ -53,10 +53,9 @@ const HeroPage = ({ id, heroes, combatant1, setCombatant1, setCombatant2 }) => {
   )
 }
 
-export const mapStateToProps = ({ heroes, combatant1, combatant2 }) => ({
+export const mapStateToProps = ({ heroes, combatant1 }) => ({
   heroes,
   combatant1,
-  combatant2
 });
 
 export const mapDispatchToProps = (dispatch) => (
