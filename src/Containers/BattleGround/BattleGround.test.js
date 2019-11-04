@@ -112,5 +112,12 @@ describe('BattleGround', () => {
       wrapper.instance().handleSubmit(mockEvent);
       expect(mockSetCombatant2).toHaveBeenCalledWith('superboy');
     }); 
+
+    it('should call determineWinner when handleSubmit is called', async () => {
+      const mockDetermineWinner = jest.fn();
+      wrapper.instance().determineWinner = mockDetermineWinner;
+      await wrapper.instance().handleSubmit(mockEvent);
+      expect(mockDetermineWinner).toHaveBeenCalled();
+    });
   });
 })
