@@ -62,4 +62,15 @@ describe('fetchHeroes', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
+
+  it('should dispatch hasErrored if response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'Error'
+    }));
+    const thunk = fetchHeroes();
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Error'));
+  });
 })
