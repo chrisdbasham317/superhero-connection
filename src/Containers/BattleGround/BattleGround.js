@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -62,9 +63,9 @@ export class BattleGround extends Component {
     let hero2Counter = 0;
     attributes.map(attr => {
       if (hero1Stats[attr] > hero2Stats[attr]) {
-        hero1Counter++
+        return hero1Counter++
       } else if (hero1Stats[attr] < hero2Stats[attr]) {
-        hero2Counter++
+        return hero2Counter++
       }
     });
     return this.setWinner(hero1Counter, hero2Counter);
@@ -83,7 +84,6 @@ export class BattleGround extends Component {
   render() {
     const hero1 = this.props.heroes.filter(hero => hero.name === this.props.combatant1);
     const hero2 = this.props.heroes.filter(hero => hero.name === this.props.combatant2);
-    const renderReady = [...hero1, ...hero2];
     const options = this.props.heroes.map(hero => <option
       key={hero.id}
       value={`${hero.name}`}
@@ -170,3 +170,13 @@ export const mapDispatchToProps = (dispatch) => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(BattleGround);
+
+BattleGround.propTypes = {
+  id: PropTypes.string,
+  heroes: PropTypes.array,
+  combatant1: PropTypes.string,
+  combatant2: PropTypes.string,
+  setCombatant1: PropTypes.func,
+  setCombatant2: PropTypes.func,
+  setWinner: PropTypes.func
+}

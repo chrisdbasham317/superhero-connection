@@ -57,7 +57,7 @@ describe('HeroPage', () => {
   it('should call setCombatant2 when combatant1 is defined', () => {
     wrapper.find('.link--add-hero').simulate('click');
     expect(mockSetCombatant2).toHaveBeenCalledWith('superman');
-  })
+  });
 
   it('should return an object with the heroes array, and combatant1', () => {
     const mockState = {

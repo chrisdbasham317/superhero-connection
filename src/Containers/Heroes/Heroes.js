@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HeroCard from '../../Components/HeroCard/HeroCard';
 import './Heroes.css';
@@ -25,3 +26,8 @@ export const mapStateToProps = ({ heroes, isLoading }) => ({
 })
 
 export default connect(mapStateToProps)(Heroes);
+
+Heroes.propTypes = {
+  heroes: PropTypes.array,
+  isLoading: PropTypes.bool
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -92,3 +93,7 @@ export const mapDispatchToProps = (dispatch) => (
 )
 
 export default connect(null, mapDispatchToProps)(App);
+
+App.propTypes = {
+  fetchHeroes: PropTypes.func
+}

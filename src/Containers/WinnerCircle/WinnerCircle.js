@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './WinnerCircle.css'
 
@@ -12,7 +13,7 @@ export const WinnerCircle = ({winner, heroes}) => {
         <h1 className='h1--winner-circle'>WinnerCircle</h1>
         <div className='div--winner-info'>
           <h2 className='h2--winner-name'>{winnerInfo.name}</h2>
-          <img className='img--winner-img'src={winnerInfo.images.md} />
+          <img className='img--winner-img'src={ winnerInfo.images.md } alt='Winner' />
         </div>
       </section>}
     </section>
@@ -25,3 +26,8 @@ export const mapStateToProps = ({winner, heroes}) => ({
 })
 
 export default connect(mapStateToProps)(WinnerCircle);
+
+WinnerCircle.propTypes = {
+  winner: PropTypes.string,
+  heroes: PropTypes.array
+}

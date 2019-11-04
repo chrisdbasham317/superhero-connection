@@ -18,11 +18,6 @@ export const setWinner = name => ({
   name
 });
 
-export const setModal = bool => ({
-  type: 'SET_MODAL',
-  bool
-});
-
 export const setCombatant1 = name => ({
   type: 'SET_COMBATANT_1',
   name
@@ -31,9 +26,4 @@ export const setCombatant1 = name => ({
 export const setCombatant2 = name => ({
   type: 'SET_COMBATANT_2',
   name
-});
-
-export const toggleModal = bool => ({
-  type: 'TOGGLE_MODAL',
-  bool
 });

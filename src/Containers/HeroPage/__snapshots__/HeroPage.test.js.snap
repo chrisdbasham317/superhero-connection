@@ -16,7 +16,7 @@ exports[`HeroPage should match the snapshot 1`] = `
         superman
       </h1>
       <img
-        alt="superman photo"
+        alt="superman"
         src="medium image"
       />
       <div
