@@ -147,5 +147,12 @@ describe('BattleGround', () => {
     expect(wrapper.state().timerComplete).toEqual(false);
     jest.advanceTimersByTime(5000);
     expect(wrapper.state().timerComplete).toEqual(true);
+  });
+
+  it('should call setWinner when determineWinner is called', () => {
+    const mockSetWinner = jest.fn();
+    wrapper.instance().setWinner = mockSetWinner;
+    wrapper.instance().determineWinner();
+    expect(mockSetWinner).toHaveBeenCalledWith(1, 0);
   })
 })
