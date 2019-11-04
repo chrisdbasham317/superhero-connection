@@ -15,6 +15,10 @@ describe('BattleGround', () => {
       images: {
         md: 'medium image',
         lg: 'large image'
+      },
+      powerstats: {
+        strength: 100,
+        intelligence: 100,
       }
     },
     {
@@ -23,6 +27,10 @@ describe('BattleGround', () => {
       images: {
         md: 'medium image',
         lg: 'large image'
+      },
+      powerstats: {
+        strength: 100,
+        intelligence: 85,
       }
     }
   ]
@@ -113,11 +121,23 @@ describe('BattleGround', () => {
       expect(mockSetCombatant2).toHaveBeenCalledWith('superboy');
     }); 
 
+    it('should update state when handleSubmit is called', async () => {
+      await wrapper.instance().handleSubmit(mockEvent);
+      expect(wrapper.state().modalState).toEqual(false);
+    })
+
     it('should call determineWinner when handleSubmit is called', async () => {
       const mockDetermineWinner = jest.fn();
       wrapper.instance().determineWinner = mockDetermineWinner;
       await wrapper.instance().handleSubmit(mockEvent);
       expect(mockDetermineWinner).toHaveBeenCalled();
+    });
+
+    it('should call displayTimer when handleSubmit is called', async () => {
+      const mockDisplayTimer = jest.fn();
+      wrapper.instance().displayTimer = mockDisplayTimer;
+      await wrapper.instance().handleSubmit(mockEvent);
+      expect(mockDisplayTimer).toHaveBeenCalled();
     });
   });
 })
