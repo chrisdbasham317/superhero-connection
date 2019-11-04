@@ -2,13 +2,13 @@ import { isLoading, hasErrored, setHeroes } from '../Actions';
 import { getDefaultHeroes } from '../helpers/helperFuncs';
 import { fetchHeroes } from './fetchHeroes';
 
+jest.mock('../helpers/helperFuncs');
+
 describe('fetchHeroes', () => {
   let mockDispatch
-  let getDefaultHeroes
 
   beforeEach(() => {
     mockDispatch = jest.fn();
-    getDefaultHeroes = jest.fn();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({
@@ -29,5 +29,13 @@ describe('fetchHeroes', () => {
     thunk(mockDispatch);
 
     expect(window.fetch).toHaveBeenCalled();
+  });
+
+  it('should call getDefaultHeroes helper function with correct arg', () => {
+    const expected = {results: [{ name: 'superman' }]}
+    const thunk = fetchHeroes();
+    thunk(mockDispatch);
+
+    expect(getDefaultHeroes).toHaveBeenCalledWith(expected)
   })
 })
