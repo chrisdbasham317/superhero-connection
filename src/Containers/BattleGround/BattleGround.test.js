@@ -5,6 +5,7 @@ import { setCombatant1, setCombatant2, setWinner } from '../../Actions';
 
 
 jest.mock('../../Actions');
+jest.useFakeTimers();
 
 describe('BattleGround', () => {
   let wrapper
@@ -140,4 +141,11 @@ describe('BattleGround', () => {
       expect(mockDisplayTimer).toHaveBeenCalled();
     });
   });
+
+  it('should update state when displayTimer is called', () => {
+    wrapper.instance().displayTimer();
+    expect(wrapper.state().timerComplete).toEqual(false);
+    jest.advanceTimersByTime(5000);
+    expect(wrapper.state().timerComplete).toEqual(true);
+  })
 })
