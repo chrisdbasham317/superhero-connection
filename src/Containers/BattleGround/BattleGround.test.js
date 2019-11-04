@@ -87,4 +87,20 @@ describe('BattleGround', () => {
     wrapper.find('.button--start-fight').simulate('click', mockEvent);
     expect(mockHandleSubmit).toHaveBeenCalledWith(mockEvent);
   });
+
+  describe('handleSubmit', () => {
+    let mockEvent
+
+    beforeEach(() => {
+      mockEvent = {
+        preventDefault: jest.fn()
+      }
+    });
+    it('should call a series of methods when handleSubmit is called', () => {
+      const mockSetDefaultBattle = jest.fn();
+      wrapper.instance().setDefaultBattle = mockSetDefaultBattle;
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockSetDefaultBattle).toHaveBeenCalled();
+    });
+  })
 })
