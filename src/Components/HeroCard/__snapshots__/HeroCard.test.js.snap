@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroCard should match the snapshot 1`] = `
+<section
+  className="section--hero-card"
+>
+  <img
+    alt="picture of Superman"
+    className="img--card-pic"
+    src="thisIsAnImage"
+  />
+  <h2>
+    Superman
+  </h2>
+  <div
+    className="div--view-more-btn"
+  >
+    <Link
+      className="link--view-more-btn"
+      to={
+        Object {
+          "param": 3,
+          "pathname": "/hero/3}",
+        }
+      }
+    >
+      More Info
+    </Link>
+  </div>
+</section>
+`;
