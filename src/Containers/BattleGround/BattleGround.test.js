@@ -160,4 +160,26 @@ describe('BattleGround', () => {
     wrapper.instance().determineWinner;
     expect(mockSetWinner).toHaveBeenCalledWith('superman');
   });
+  
+  describe('mapStateToProps', () => {
+    let mockState
+
+    beforeEach(() => {
+      mockState = {
+        heroes: mockHeroes,
+        combatant1: 'Superman',
+        combatant2: 'Superboy Prime'
+      }
+    })
+    it('should return an object with the heroes array, and the combatants', () => {
+      const expected = {
+        heroes: mockHeroes,
+        combatant1: 'Superman',
+        combatant2: 'Superboy Prime'
+      };
+      const mappedProps = mapStateToProps(mockState);
+
+      expect(mappedProps).toEqual(expected);
+    });
+  });
 })
