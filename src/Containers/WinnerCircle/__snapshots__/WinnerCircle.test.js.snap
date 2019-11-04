@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WinnerCircle should match the snapshot 1`] = `
+<section
+  className="section--winner-circle"
+>
+  <section>
+    <h1
+      className="h1--winner-circle"
+    >
+      WinnerCircle
+    </h1>
+    <div
+      className="div--winner-info"
+    >
+      <h2
+        className="h2--winner-name"
+      >
+        Superman
+      </h2>
+      <img
+        className="img--winner-img"
+        src="medium image"
+      />
+    </div>
+  </section>
+</section>
+`;
