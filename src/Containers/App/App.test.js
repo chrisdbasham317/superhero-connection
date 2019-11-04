@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { bindActionCreators } from 'redux'; 
 import { App, mapDispatchToProps } from './App';
 import { fetchHeroes } from '../../Thunks/fetchHeroes';
 
@@ -29,13 +28,12 @@ describe('App', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('calls dispatch with an addTodo action when handleSubmit is called', () => {
+    it('calls dispatch with fetchHeroes', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = fetchHeroes();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.fetchHeroes(actionToDispatch);
 
-      // Expectaion
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });

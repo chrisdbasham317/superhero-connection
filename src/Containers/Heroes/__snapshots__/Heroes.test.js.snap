@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heroes should match the snapshot 1`] = `
+<section
+  className="section--heroes"
+>
+  <HeroCard
+    id={4}
+    img="medium image"
+    key="4"
+    name="superman"
+  />
+  <HeroCard
+    id={5}
+    img="medium image"
+    key="5"
+    name="superboy"
+  />
+</section>
+`;

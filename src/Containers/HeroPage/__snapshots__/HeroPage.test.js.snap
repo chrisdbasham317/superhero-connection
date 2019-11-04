@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroPage should match the snapshot 1`] = `
+<section
+  className="section--hero-page"
+>
+  <div
+    className="div--loaded-hero-data-render"
+  >
+    <section
+      className="section--name-pic"
+    >
+      <h1
+        className="h1--hero-name"
+      >
+        superman
+      </h1>
+      <img
+        alt="superman photo"
+        src="medium image"
+      />
+      <div
+        className="link--hero-battle-btn"
+      >
+        <Link
+          className="link--add-hero"
+          onClick={[Function]}
+          to="/battle"
+        >
+          Choose Hero
+        </Link>
+      </div>
+    </section>
+    <section
+      className="section--hero-info"
+    >
+      <h2
+        className="h2--info-label"
+      >
+        Aliases
+      </h2>
+      <ul
+        className="ul--alias-list"
+      >
+        <li
+          key="Man of Steel"
+        >
+          Man of Steel
+        </li>
+      </ul>
+      <h2
+        className="h2--info-label"
+      >
+        Attributes
+      </h2>
+      <ul
+        className="ul--stats-list"
+      >
+        <li
+          className="li--stats"
+          key="strength"
+        >
+          strength: 100
+        </li>
+        <li
+          className="li--stats"
+          key="intelligence"
+        >
+          intelligence: 100
+        </li>
+      </ul>
+      <h2
+        className="h2--info-label"
+      >
+        Birth Place:
+      </h2>
+      <p />
+      <h2
+        className="h2--info-label"
+      >
+        First Appearance:
+      </h2>
+      <p />
+      <h2
+        className="h2--info-label"
+      >
+        Publisher:
+      </h2>
+      <p />
+      <h2
+        className="h2--info-label"
+      >
+        Alignment:
+      </h2>
+      <p />
+    </section>
+  </div>
+</section>
+`;
