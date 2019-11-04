@@ -52,5 +52,18 @@ describe('BattleGround', () => {
     wrapper.instance().setDefaultBattle()
     expect(wrapper.state().challenger1).toEqual('Aquaman');
     expect(wrapper.state().challenger2).toEqual('Aquaman');
-  })
+  });
+
+  it('should call handleChange when a change occurs', () => {
+    const mockHandleChange = jest.fn();
+    wrapper.instance().handleChange = mockHandleChange
+    const mockEvent = {
+      target: {
+        name: 'challenger1',
+        value: 'Bane'
+      }
+    }
+    wrapper.find('select').first().simulate('change', mockEvent);
+    expect(mockHandleChange).toHaveBeenCalledWith(mockEvent);
+  });
 })
