@@ -44,5 +44,22 @@ describe('fetchHeroes', () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
-  })
+  });
+
+  it('should dispatch setHeroes(heroes)', async () => {
+    const thunk = fetchHeroes();
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(setHeroes());
+  });
+
+  it('should dispatch isLoading(false) if response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false
+    }));
+    const thunk = fetchHeroes();
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  });
 })
