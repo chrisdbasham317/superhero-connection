@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="div--app"
+>
+  <Modal
+    ariaHideApp={false}
+    bodyOpenClassName="ReactModal__Body--open"
+    className="WelcomeModal"
+    closeTimeoutMS={0}
+    contentLabel="App Welcome Page"
+    isOpen={true}
+    overlayClassName="WelcomeOverlay"
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {},
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.85)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        },
+      }
+    }
+  >
+    <article
+      className="article--welcome-modal"
+    >
+      <h1
+        className="h1--welcome-modal"
+      >
+        Welcome to SuperHero Battle!
+      </h1>
+      <p
+        className="p--welocome-modal"
+      >
+        <span>
+          SuperHero Battle
+        </span>
+         is a place where you can find out more information about some of your favorite superheroes and villians. More importantly, it's where you find out who could beat who in a head to head fight!
+      </p>
+      <button
+        className="button--close-modal"
+        onClick={[Function]}
+      >
+        Enter to find out!
+      </button>
+    </article>
+  </Modal>
+  <header
+    className="header--nav-bar"
+  >
+    <h1
+      className="h1--main-title"
+    >
+      SuperHero Battle
+    </h1>
+    <div
+      className="div--nav-links"
+    >
+      <NavLink
+        activeClassName="active"
+        className="links"
+        exact={true}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="links"
+        to="/battle"
+      >
+        Battle
+      </NavLink>
+    </div>
+  </header>
+  <main>
+    <Route
+      exact={true}
+      path="/"
+    >
+      <Connect(Heroes) />
+    </Route>
+    <Route
+      path="/battle"
+    >
+      <Connect(BattleGround) />
+    </Route>
+    <Route
+      path="/hero/:id"
+      render={[Function]}
+    />
+    <Route
+      path="/winner"
+    >
+      <Connect(WinnerCircle) />
+    </Route>
+  </main>
+</div>
+`;

@@ -12,7 +12,7 @@ describe('fetchHeroes', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({
-        results: [{name: 'superman'}]
+        results: [{ name: 'superman' }]
       })
     }))
   })
@@ -73,4 +73,4 @@ describe('fetchHeroes', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Error'));
   });
-})
+});
